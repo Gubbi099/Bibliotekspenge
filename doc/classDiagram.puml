@@ -1,0 +1,67 @@
+@startuml
+
+class Author {
+- String name
+- ArrayList<Title> titles
++ Author(String name)
++ void addTitle(Title title)
++ double calculateRoyalties()
++ String getName()
+  }
+
+abstract class Title {
+- String title
+- String literatureType
+# double rate
++ Title(String title, String literatureType)
++ double calculateRoyalty()
+# {abstract} double calculatePoints()
+# double convertLiteratureType()
+}
+
+abstract class PhysicalTitle extends Title {
+# int copies
++ PhysicalTitle(String title, String literatureType, int copies)
+  }
+
+class AudioBook extends PhysicalTitle implements IAudioBook {
+- int durationInMinutes
++ AudioBook(String title, String literatureType, int copies, int durationInMinutes)
+# double calculatePoints()
+}
+
+class PrintedBook extends PhysicalTitle {
+- int pages
++ PrintedBook(String title, String literatureType, int copies, int pages)
+# double calculatePoints()
+}
+
+abstract class NetTitle extends Title {
+- int availability
+- int reach
+- int use
++ NetTitle(String title, String literatureType, int availability, int reach, int use)
+# double getPseudoCopies()
+- int getUseFactor()
+  }
+
+class EBook extends NetTitle {
+- int characters
+- boolean illustrated
++ EBook(String title, String literatureType, int availability, int reach, int use, int characters, boolean illustrated)
+- double calculatePages()
+# double calculatePoints()
+}
+
+class EAudioBook extends NetTitle implements IAudioBook {
+- int durationInMinutes
++ EAudioBook(String title, String literatureType, int availability, int reach, int use, int durationInMinutes)
+# double calculatePoints()
+}
+
+interface IAudioBook {
++ int getDurationInMinutes()
+}
+
+Author *-- Title
+@enduml
