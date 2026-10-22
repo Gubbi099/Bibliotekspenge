@@ -17,8 +17,10 @@ public class LibraryRoyaltyCalculator {
 
         System.out.println(author.getName() + " : " + author.calculateRoyalties() + "kr");
 
+        Author author1 = new Author("Jeff");
         Title ebog = new Ebook("123", "FAG", MAX_MUNICIPALITIES, 50, 205, 360000, false);
-        System.out.println(((Ebook) ebog).calculatePoints());
+        author1.addTitle(ebog);
+        System.out.println(author1.calculateRoyalties());
 
     }
 }
