@@ -24,6 +24,7 @@ public abstract class Title {
     /**
      * Converts the string {@code literatureType} to a number value.
      * @return a {@code double} value based on the titles {@code literatureType}
+     * @throws IllegalArgumentException
      */
     protected double convertLiteratureType() {
         switch (literatureType.toUpperCase()) {
@@ -38,7 +39,7 @@ public abstract class Title {
             case "FAG":
                 return 1;
             default:
-                return 0;
+                throw new IllegalArgumentException("Invalid literature type!");
         }
     }
 }
