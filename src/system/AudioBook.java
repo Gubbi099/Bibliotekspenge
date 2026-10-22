@@ -23,6 +23,11 @@ public final class AudioBook extends PhysicalTitle implements IAudioBook{
      * @return a {@code double} which is the audiobooks points.
      */
     protected double calculatePoints() {
-        return (durationInMinutes * 0.5) * this.copies * this.convertLiteratureType() ;
+        try {
+            return (durationInMinutes * 0.5) * this.copies * this.convertLiteratureType();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+            return 0;
+        }
     }
 }

@@ -14,7 +14,12 @@ public final class EAudioBook extends NetTitle implements IAudioBook{
      * @return amount of points that the ebook generates.
      */
     protected double calculatePoints() {
-        return (this.getDurationInMinutes() * 0.5) * this.convertLiteratureType() * this.getPseudoCopies();
+        try {
+            return (this.getDurationInMinutes() * 0.5) * this.convertLiteratureType() * this.getPseudoCopies();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+            return 0;
+        }
     }
 
     @Override

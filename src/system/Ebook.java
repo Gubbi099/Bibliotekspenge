@@ -29,6 +29,11 @@ public final class Ebook extends NetTitle {
      */
     @Override
     public double calculatePoints() {
-        return this.calculatePages() * this.convertLiteratureType() * this.getPseudoCopies();
+        try {
+            return this.calculatePages() * this.convertLiteratureType() * this.getPseudoCopies();
+        } catch (IllegalArgumentException e) {
+            System.out.println(e);
+            return 0;
+        }
     }
 }
