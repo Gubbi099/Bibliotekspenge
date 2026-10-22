@@ -10,10 +10,18 @@ public class Author {
         this.name = name;
     }
 
+    /**
+     * Adds a {@code Title} to the Author
+     * @param title Title added to Author.
+     */
     public void addTitle(Title title) {
         this.titles.add(title);
     }
 
+    /**
+     * Returns the total royalties of all the authors titles combined.
+     * @return {@code sum} of total royalties
+     */
     public double calculateRoyalties() {
         double sum = 0;
         for (Title t : titles) {
@@ -22,6 +30,10 @@ public class Author {
         return sum;
     }
 
+    /**
+     *
+     * @return author {@code name}
+     */
     public String getName() {
         return this.name;
     }

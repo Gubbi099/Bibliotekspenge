@@ -3,7 +3,15 @@ import system.*;
 public class LibraryRoyaltyCalculator {
 
     private static final int MAX_MUNICIPALITIES = 97;
-
+    /**
+     * 1. Opretter mindst 1 forfatter
+     *
+     * <p>2. Tilføjer mindst 3 bøger af forskellig slags til forfatteren (herunder mindst 1 lydbog) ved hjælp af {@code Author} klassens {@code addTitle} metode
+     *
+     * <p>3. Kalder forfatterens {@code calculateRoyalties()} der beregner bibliotekspenge på hver af forfatterens titler, lægger det sammen og returnerer beløbet med 2 decimaler
+     *
+     * <p>4. Skriver resultatet pænt ud med forfatterens navn og det beløb der skal udbetales
+     */
     public static void main(String[] args) {
 
         Author author = new Author("J.K Rowling");
