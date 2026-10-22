@@ -1,6 +1,6 @@
 package system;
 
-public class PrintedBook extends PhysicalTitle {
+public final class PrintedBook extends PhysicalTitle {
     private int pages;
 
     public PrintedBook(String title, String literatureType, int copies, int pages) {

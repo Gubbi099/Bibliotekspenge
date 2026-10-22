@@ -1,6 +1,6 @@
 package system;
 
-public class EAudioBook extends NetTitle implements IAudioBook{
+public final class EAudioBook extends NetTitle implements IAudioBook{
 
     private final int durationInMinutes;
 
