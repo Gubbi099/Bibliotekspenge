@@ -1,3 +1,5 @@
+package system;
+
 import java.util.ArrayList;
 
 public class Author {
@@ -13,7 +15,11 @@ public class Author {
     }
 
     public double calculateRoyalties() {
-        return 0;
+        double sum = 0;
+        for (Title t : titles) {
+            sum += t.calculateRoyalty();
+        }
+        return sum;
     }
 
     public String getName() {
