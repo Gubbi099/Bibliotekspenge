@@ -27,7 +27,7 @@ public class Author {
         for (Title t : titles) {
             sum += t.calculateRoyalty();
         }
-        return sum;
+        return Math.floor(sum * 100) / 100;
     }
 
     /**

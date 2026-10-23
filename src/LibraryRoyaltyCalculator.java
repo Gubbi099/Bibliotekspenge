@@ -15,9 +15,9 @@ public class LibraryRoyaltyCalculator {
     public static void main(String[] args) {
 
         Author author = new Author("J.K Rowling");
-        Title title = new PrintedBook("Harry Potter 1", "SKØN", 100, 100);
-        Title title2 = new PrintedBook("Harry Potter 2", "SKØN", 7, 120);
-        Title titleAudio = new AudioBook("Harry Potter 1", "SKØN", 10, 100);
+        Title title = new PrintedBook("Harry Potter 1", LiteraturType.SKØN, 100, 100);
+        Title title2 = new PrintedBook("Harry Potter 2", LiteraturType.SKØN, 7, 120);
+        Title titleAudio = new AudioBook("Harry Potter 1", LiteraturType.SKØN, 10, 100);
 
         author.addTitle(title);
         author.addTitle(title2);
@@ -26,7 +26,7 @@ public class LibraryRoyaltyCalculator {
         System.out.println(author.getName() + " : " + author.calculateRoyalties() + "kr");
 
         Author author1 = new Author("Jeff");
-        Title ebog = new Ebook("123", "FAG", MAX_MUNICIPALITIES, 50, 205, 360000, false);
+        Title ebog = new Ebook("123", LiteraturType.FAG, MAX_MUNICIPALITIES, 50, 205, 360000, false);
         author1.addTitle(ebog);
         System.out.println(author1.calculateRoyalties());
 

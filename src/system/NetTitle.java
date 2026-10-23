@@ -5,7 +5,7 @@ public abstract class NetTitle extends Title {
     private final int reach;
     private final int use;
 
-    public NetTitle(String title, String literatureType, int availability, int reach, int use) {
+    public NetTitle(String title, LiteraturType literatureType, int availability, int reach, int use) {
         super(title, literatureType);
         this.availability = availability;
         this.reach = reach;

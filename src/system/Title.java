@@ -2,10 +2,10 @@ package system;
 
 public abstract class Title {
     private final String title;
-    private final String literatureType;
+    private final LiteraturType literatureType;
     protected static final double RATE = 0.067574;
 
-    public Title(String title, String literatureType) {
+    public Title(String title, LiteraturType literatureType) {
         this.title = title;
         this.literatureType = literatureType;
     }
@@ -15,7 +15,7 @@ public abstract class Title {
      * @return a {@code double} which is the titles royalty, rounded to two decimal places.
      */
     public double calculateRoyalty() {
-        return Math.floor((this.calculatePoints() * RATE) * 100) / 100;
+        return this.calculatePoints() * RATE;
     }
 
     protected abstract double calculatePoints();
@@ -26,14 +26,14 @@ public abstract class Title {
      * @throws IllegalArgumentException
      */
     protected double convertLiteratureType() {
-        switch (literatureType.toUpperCase()) {
-            case "BI", "TE":
+        switch (literatureType) {
+            case BI, TE:
                 return 3;
-            case "LYRIK":
+            case LYRIK:
                 return 6;
-            case "SKØN":
+            case SKØN:
                 return 1.7;
-            case "FAG":
+            case FAG:
                 return 1;
             default:
                 throw new IllegalArgumentException("Invalid literature type!");

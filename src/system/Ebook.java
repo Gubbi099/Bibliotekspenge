@@ -4,7 +4,7 @@ public final class Ebook extends NetTitle {
     private final int characters;
     private final boolean illustrated;
 
-    public Ebook(String title, String literatureType, int availability, int reach, int use, int characters, boolean illustrated) {
+    public Ebook(String title, LiteraturType literatureType, int availability, int reach, int use, int characters, boolean illustrated) {
         super(title, literatureType, availability, reach, use);
         this.characters = characters;
         this.illustrated = illustrated;
