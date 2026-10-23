@@ -3,12 +3,11 @@ package system;
 public abstract class Title {
     private final String title;
     private final String literatureType;
-    protected final double RATE;
+    protected static final double RATE = 0.067574;
 
     public Title(String title, String literatureType) {
         this.title = title;
         this.literatureType = literatureType;
-        this.RATE = 0.067574;
     }
 
     /**
@@ -16,7 +15,7 @@ public abstract class Title {
      * @return a {@code double} which is the titles royalty, rounded to two decimal places.
      */
     public double calculateRoyalty() {
-        return Math.floor((this.calculatePoints() * this.RATE) * 100) / 100;
+        return Math.floor((this.calculatePoints() * RATE) * 100) / 100;
     }
 
     protected abstract double calculatePoints();
